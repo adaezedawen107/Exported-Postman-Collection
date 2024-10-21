@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "3ec0194e-7e01-425d-ae85-7dc1b63b24bc",
+		"name": "Successful Scenario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34567121",
+		"_collection_link": "https://preciousadaeze-2r27e15l0sgy5.postman.co/workspace/Lendsqr-Adjutor-API~d436faf7-4fc5-401f-91ab-35d45b041457/collection/34567121-3ec0194e-7e01-425d-ae85-7dc1b63b24bc?action=share&source=collection_link&creator=34567121"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Signup functionality - 200 OK\", function () {",
+							"   pm.sendRequest({",
+							"    url: \"https://086284d1-b339-460c-a93e-724346bed9ad.mock.pstmn.io/Signup\",",
+							"    method: \"post\",",
+							"    header: {",
+							"        \"Content-Type\":\"application/json\"",
+							"    },",
+							"    body: {",
+							"        Fullname: \"Adjutor New User\",",
+							"        workEmailaddress: \"adjutor_new_user@gmail.com\",",
+							"        mobile: \"+2348012345678\",",
+							"        BusinessName: \"Adjutor New User\",",
+							"        RCnumber: \"RC12345\",",
+							"        Password: \"12345678\"",
+							"    }",
+							"   },function (err,res) {",
+							"    pm.expect(res).to.have.status(200);",
+							"    pm.expect(res.text()).to.include(\"status\",\"success\");",
+							"   })",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullname\": \"Adjutor New User\",\n  \"work_email_address\": \"adjutor_new_user@gmail.com\",\n  \"mobile\": \"+234 801 234 5678\",\n  \"business_name\": \"Adjutor New User\",\n  \"RC_Number\": \"RC12345\",\n  \"password\": \"12345678\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullname\": \"Adjutor New User\",\n  \"work_email_address\": \"adjutor_new_user@gmail.com\",\n  \"mobile\": \"+234 801 234 5678\",\n  \"business_name\": \"Adjutor New User\",\n  \"RC_Number\": \"RC12345\",\n  \"password\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/Signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "\"status\":\"success\""
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test (\"Login functionality - 200 OK\", function () {",
+							"    pm.sendRequest({",
+							"        url: \"https://086284d1-b339-460c-a93e-724346bed9ad.mock.pstmn.io/Login\",",
+							"        method:\"POST\",",
+							"        header: {",
+							"            \"Content-Type\": \"application/json\"",
+							"        },",
+							"        body: {",
+							"            workEmailaddress:\"adjutor_new_user@gmail.com\",",
+							"            Password: \"12345678\"",
+							"        }",
+							"    }, function (err, res) {",
+							"        pm.expect(res).to.have.status(200);",
+							"        pm.expect(res.text()).to.include(\"status\",\"success\");",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"work_ email_address\": \"adjutor_new_user@gmail.com\",\n  \"password\":\"12345678\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"work_ email_address\": \"adjutor_new_user@gmail.com\",\n  \"password\":\"12345678\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/Login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "\"status\":\"success\""
+				}
+			]
+		},
+		{
+			"name": "RetrievingyourAPIkeys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test (\"Login functionality - 200 OK\", function () {",
+							"    pm.sendRequest({",
+							"        URL: \"https//086284d1-b339-460c-a93e-724346bed9ad.mock.pstmn.io/RetrieveingyourAPIKeys\",",
+							"        method: \"GET\",",
+							"        header: {",
+							"            \"Content-Type\": \"application/json\"",
+							"        },",
+							"        body: {",
+							"            APIkeys: \"sk_live_h1LwuO3MUgs15wlEnlDv4PUx5vtKrmM4v5rfFL3Y\",",
+							"        }",
+							"    }, function (err,res){",
+							"        pm.expect(res).to.have.status(200),",
+							"        pm.expect(res.text()).to.include, (\"APIkey\",\"sk_live_h1Lwu03MUgs15w1En1Dv4PUx5vtKrmM4v5rfFL37\");",
+							"    })",
+							"})",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"API key\": \"sk_live_h1LwuO3MUgs15wlEnlDv4PUx5vtKrmM4v5rfFL3Y\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/RetrievingyourAPIkeys",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"RetrievingyourAPIkeys"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"API key\": \"sk_live_h1LwuO3MUgs15wlEnlDv4PUx5vtKrmM4v5rfFL3Y\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/RetrievingyourAPIkeys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"RetrievingyourAPIkeys"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n  \"API key\": \"sk_live_h1LwuO3MUgs15wlEnlDv4PUx5vtKrmM4v5rfFL3Y\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://086284d1-b339-460c-a93e-724346bed9ad.mock.pstmn.io"
+		}
+	]
+}
